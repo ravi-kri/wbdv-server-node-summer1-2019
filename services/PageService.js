@@ -1,14 +1,24 @@
-const websiteDao = require('../daos/later/PageDao');
+const pageDao = require('../daos/PageDao');
 
 const findPagesForWebsite = wid =>
-    websiteDao
-        .findPagesForWebsite(wid)
+    pageDao.findPagesForWebsite(wid)
 
 const findPageById = pid =>
-    websiteDao
-        .findPageById(pid)
+    pageDao.findPageById(pid)
+
+const createPage = (websiteId, page) =>
+    pageDao.createPage(websiteId, page)
+
+const updatePage = (websiteId, pageId, page)  =>
+    pageDao.updatePage(websiteId, pageId, page)
+
+const deletePage = (websiteId,pageId) =>
+    pageDao.deletePage(websiteId,pageId)
 
 module.exports = {
     findPagesForWebsite,
-    findPageById
+    findPageById,
+    createPage,
+    updatePage,
+    deletePage
 };
