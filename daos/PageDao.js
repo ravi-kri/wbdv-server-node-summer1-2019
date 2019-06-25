@@ -1,4 +1,5 @@
 const websiteDao = require('./WebsiteDao')
+const websiteModel = require('../models/WebsiteModel')
 
 findPagesForWebsite = websiteId =>
     websiteDao.findWebsiteById(websiteId)
@@ -14,9 +15,14 @@ findPageById = (websiteId, pageId) =>
     websiteDao.findWebsiteById(websiteId)
         .then(website => website.pages.id(pageId))
 
+deletePage = (websiteId,pageId) =>
+    websiteModel.update({_id:websiteId}, {$pull: {pages: {_id: pageId}}})
+
+
 module.exports = {
     findPagesForWebsite,
     createPage,
     findPageById,
-    updatePage
+    updatePage,
+    deletePage
 }
