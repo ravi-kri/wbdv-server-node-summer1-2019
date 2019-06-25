@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const ColumnSchema = require('./WidgetSchema')
+const ColumnSchema = require('./ColumnSchema')
 const ColumnModel = mongoose.model(
     'ColumnModel', ColumnSchema
 );
