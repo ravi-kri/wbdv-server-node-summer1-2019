@@ -104,4 +104,4 @@ require('./controllers/PageController')(app)
 // require("./controllers/page.controller.server")(app);
 // require("./controllers/later/WebsiteController")(app);
 // require("./controllers/later/PageController")(app);
-app.listen(3000)
+app.listen(process.env.PORT||3000)
