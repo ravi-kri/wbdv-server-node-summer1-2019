@@ -1,25 +1,25 @@
 module.exports = function (app) {
 
-    const websiteDao = require('../daos/WebsiteDao');
+    const websiteService = require('../services/WebsiteService');
 
     const createWebsite = (req, res) =>
-        websiteDao.createWebsite(req.body)
+        websiteService.createWebsite(req.body)
             .then(website => res.json(website))
 
     const findAllWebsites = (req, res) =>
-        websiteDao.findAllWebsites()
+         websiteService.findAllWebsites()
             .then(websites => res.json(websites))
 
     const findWebsiteById = (req, res) =>
-        websiteDao.findWebsiteById(req.params['websiteId'])
+        websiteService.findWebsiteById(req.params['websiteId'])
             .then(website => res.json(website))
 
     const deleteWebsite = (req, res) =>
-        websiteDao.deleteWebsite(req.params['websiteId'])
+    websiteService.deleteWebsite(req.params['websiteId'])
             .then(status => res.json(status))
 
     const updateWebsite = (req, res) =>
-        websiteDao.updateWebsite(req.params['websiteId'], req.body)
+    websiteService.updateWebsite(req.params['websiteId'], req.body)
             .then(status => res.json(status))
 
     app.post('/api/websites', createWebsite);
