@@ -13,13 +13,13 @@ const createWebsite = (website) =>
 const updateWebsite = (websiteId,website)  =>
     websiteDao.updateWebsite(websiteId,website)
 
-const deletePage = (websiteId) =>
-    websiteDao.deletePage(websiteId)
+const deleteWebsite = (websiteId) =>
+    websiteDao.deleteWebsite(websiteId)
 
 module.exports = {
     findAllWebsites,
     createWebsite,
     updateWebsite,
-    deletePage,
+    deleteWebsite,
     findWebsiteById
 };

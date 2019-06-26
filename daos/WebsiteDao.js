@@ -12,7 +12,8 @@ const findWebsiteById = websiteId =>
 const deleteWebsite = websiteId =>
     websiteModel.remove({_id: websiteId})
 
-const updateWebsite = (websiteId, newWebsite) =>
+
+const updateWebsite = (websiteId, newWebsit) =>
     websiteModel.update(
         {_id: websiteId},
         {$set: {title: newWebsite.title}
