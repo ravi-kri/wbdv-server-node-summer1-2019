@@ -1,5 +1,5 @@
 const websiteDao = require('./WebsiteDao')
-const websiteModel = require('../models/WebsiteModel')
+const websiteModel = require('../models/layout/WebsiteModel')
 
 findPagesForWebsite = websiteId =>
     websiteDao.findWebsiteById(websiteId)

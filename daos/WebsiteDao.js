@@ -1,4 +1,4 @@
-const websiteModel = require('../models/WebsiteModel')
+const websiteModel = require('../models/layout/WebsiteModel')
 
 const createWebsite = website =>
     websiteModel.create(website);

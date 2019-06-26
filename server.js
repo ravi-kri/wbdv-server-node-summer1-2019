@@ -30,15 +30,6 @@ function sayHello(req, res) {
 }
 app.get('/', sayHello)
 
-function addAplusB(req, res) {
-    var a = req.params['a'];
-    var b = req.params['b'];
-    a = parseInt(a);
-    b = parseInt(b);
-    var c = a + b;
-    res.send("a + b = " + c);
-}
-app.get('/add/:a/:b', addAplusB);
 
 // /login?username=alice&password=alice
 function login(req, res) {
@@ -94,7 +85,7 @@ const getAttribute = (req, res) => {
 app.get('/api/session/set/:key/:value', setAttribute)
 app.get('/api/session/get/:key', getAttribute)
 
-const authentication = require('./controllers/authentication.controller.server');
+const authentication = require('./controllers/UserController');
 authentication(app)
 
 require('./controllers/WebsiteController')(app)
